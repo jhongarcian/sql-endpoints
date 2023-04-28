@@ -10,7 +10,7 @@ server.use(json())
 const cn = {
     host: 'localhost',
     port: 5432,
-    database: 'sept2022',
+    database: 'mockcompany',
     user: 'jhongarcian',
     password: '',
     allowExitOnIdle: true
