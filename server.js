@@ -7,7 +7,7 @@ const PORT = 8080;
 const server = express();
 server.use(json())
 
-const cn = {
+const connectOptions = {
     host: 'localhost',
     port: 5432,
     database: 'mockcompany',
@@ -16,16 +16,16 @@ const cn = {
     allowExitOnIdle: true
 }
 
-const db =pgp(cn);
+const db =pgp(connectOptions);
 
-server.get('/students', async (req, res) => {
-    const students = await getStudents();
-    res.json(students)
+server.get('/employee', async (req, res) => {
+    const employee = await getEmployee();
+    res.json(employee)
 })
 
-async function getStudents() {
-    const students = await db.any('SELECT * FROM students', [false]);
-    return students;
+async function getEmployee() {
+    const employee = await db.any('SELECT * FROM employee', [false]);
+    return employee;
 }
 
 // Health endpoint 

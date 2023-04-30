@@ -9,5 +9,4 @@ CREATE TABLE students (
     gender VARCHAR(50) NOT NULL,
     cohort_start_date VARCHAR(100) NOT NULL,
     graduated BOOLEAN NOT NULL
-
 );
